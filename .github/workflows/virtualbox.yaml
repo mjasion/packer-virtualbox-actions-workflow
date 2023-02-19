@@ -1,0 +1,11 @@
+name: Build Virtualbox
+
+on: [push, pull_request]
+
+jobs:
+  build-virtualbox:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install virtualbox
+        run: apt-get install virtualbox
