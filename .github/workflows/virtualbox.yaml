@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install virtualbox
-        run: sudo apt-get install -y virtualbox software–properties–common virtualbox—ext–pack
+        run: sudo apt-get install -y virtualbox 
       - name: Setup `packer`
         uses: hashicorp/setup-packer@main
         id: setup
