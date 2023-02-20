@@ -22,5 +22,5 @@ jobs:
         run: packer init virtualbox.pkr.hcl
       - name: Run `packer build`
         id: build
-        run: packer build virtualbox.pkg.hcl
+        run: packer build virtualbox.pkr.hcl
 
