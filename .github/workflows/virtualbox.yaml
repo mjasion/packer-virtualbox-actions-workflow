@@ -8,7 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install virtualbox
-        run: sudo apt-get install -y virtualbox 
+        run: |
+          wget https://download.virtualbox.org/virtualbox/7.0.6/virtualbox-7.0_7.0.6-155176~Ubuntu~jammy_amd64.deb
+          dpkg -i virtualbox-7.0_7.0.6-155176~Ubuntu~jammy_amd64.deb
       - name: Setup `packer`
         uses: hashicorp/setup-packer@main
         id: setup
