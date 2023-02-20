@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install virtualbox
-        run: apt-get install virtualbox
+        run: sudo apt-get install virtualbox
