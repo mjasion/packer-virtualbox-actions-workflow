@@ -13,7 +13,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libqt5dbus5 libqt5gui5 libqt5help5 libqt5opengl5 libqt5printsupport5 libqt5widgets5 libqt5x11extras5 libqt5xml5 libvpx7
           sudo dpkg -i virtualbox-7.0_7.0.6-155176~Ubuntu~jammy_amd64.deb
-
+          sudo /sbin/vboxconfig
       - name: Setup `packer`
         uses: hashicorp/setup-packer@main
         id: setup
@@ -21,11 +21,11 @@ jobs:
           version: "latest" 
       - name: Run `packer init`
         id: init
-        run: packer init virtualbox.pkr.hcl
+        run: sudo packer init virtualbox.pkr.hcl
       - name: Run `packer validate`
         id: validate
-        run: packer init virtualbox.pkr.hcl
+        run: sudo packer init virtualbox.pkr.hcl
       - name: Run `packer build`
         id: build
-        run: packer build virtualbox.pkr.hcl
+        run: sudo packer build virtualbox.pkr.hcl
 
